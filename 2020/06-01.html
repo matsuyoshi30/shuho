@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>06-01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 23 - 2020</h1>
+        
+        <p>The weekly report from 06-01 to 06-07</p>
+        
+      </header>
+      <h2>Project</h2>
+<h3>golisp</h3>
+<p>可変長の算術演算ができるようになった。最初は (+ 1 2 3) -> (+ 1 (+ 2 3)) というように計算していた（最初の項とそれ以外の項に分け、最初の項以外をまず計算して、最初の項と計算済の項を最後に計算する）のだが、これが割り算だと誤りになる。例えば (/ 8 2 2) は (/ (/ 8 2) 2) というように計算するのが正しいが、このやり方だと (/ 8 (/ 2 2)) になる。これを、オペランドは左から順に処理していくように修正して算術演算は完了（ソースはめちゃ汚い）。</p>
+<h3>mmcc</h3>
+<p>関数宣言のサポートを追加。<code>int f();</code>のセミコロンをサポートするだけ。セルフホストを目標とすると、自作コンパイラ内で使用していない union とかは後回しにしようかと思ったりするが、リファレンス実装の順に追加していくのが分かりやすいのかと悩み中。</p>
+<h2>Cooking</h2>
+<h3>エビのトマトクリームパスタ</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">エビトマトクリームパスタ。前回は塩気が強かったので気持ち少なめに。ちょうどいい感じになったけど、エビあまり感じなったのでまだまだ改善できる <a href="https://t.co/FjLmKgMSl8">pic.twitter.com/FjLmKgMSl8</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1268533598761611264?ref_src=twsrc%5Etfw">June 4, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>前回つくったときはコンソメで調味してしまい、少し味が濃くなってしまった。それを反省し今回は塩で調味しこまめに味見を心掛けた。全体的によくまとまった感じだが、エビの味があまりしなかったのが反省点。剥いた殻を使うなどして次に改善したい。</p>
+<ul>
+<li>にんにくをみじん切りにしてオリーブオイルで加熱。わいてきたらエビ一尾分の身をみじん切りにしてアルミパンに投入。にんにくが色づいてきたら玉ねぎ1/4個分のみじん切りを入れ、味出しの塩を振る。</li>
+<li>玉ねぎが色づいてきたらエビの身を投入して、エビの色が変わったら一旦エビを更に取り出しておく。</li>
+<li>カットトマト缶をぶちこんで15分くらい水分を飛ばす。飛んだら生クリーム100cc入れる。</li>
+<li>パスタ茹でている間にエビをアルミパンに戻してソースの味見と調味をし、パスタが茹で上がったらソースと絡ませて完成。</li>
+</ul>
+<h3>鶏のカッチャトーラ</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">鶏と茸のカッチャトーラ。茸もっと入れたほうがよかったなー <a href="https://t.co/McaFnifm2F">pic.twitter.com/McaFnifm2F</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1269141500626997248?ref_src=twsrc%5Etfw">June 6, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p><a href="https://www.youtube.com/watch?v=AtEWyXozrzE&list=LLc2KOAguTaVfvi3lP4aCfgA&index=4&t=0s">この動画</a>を参考にして作ってみた。</p>
+<ul>
+<li>バジルとオリーブが手元になかったので入れていないのと、エリンギの代わりに舞茸を使っているところ以外はほぼレシピ通り。茸の量をもっと多めにしても良かった。あまり茸の旨味が感じられなかった。ただ全体的にまとまって非常に美味しく仕上がったので概ね満足。</li>
+<li>アルミ鍋、鉄フライパン、アルミパンを使うので若干めんどい感じはあるが、鍋にぶち込んでしまえば後は煮込むだけなので比較的楽。</li>
+</ul>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>

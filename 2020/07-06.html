@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>07-06</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 28 - 2020</h1>
+        
+        <p>The weekly report from 07-06 to 07-12</p>
+        
+      </header>
+      <h2>Projects</h2>
+<h3>mmcc</h3>
+<ul>
+<li><code>short</code>や<code>long</code>を追加したので、その分の型キャストのテストケースを追加</li>
+<ul>
+<li>8590066177 という数値を int, short, char にキャストするケースを追加。8590066177 は2進数表記で 1000000000000000100000001000000001 となり、32bit の int にキャストすると 00000000000000100000001000000001 （上位2bitが落ちる）となって 131585 になる</li>
+<li>型のサイズに応じた関数の引数のレジスタ割当や代入時のレジスタを修正</li>
+</ul>
+<li><code>_Bool</code>を追加。値が0に等しい場合は0、それ以外は1となる型。</li>
+<li><code>sizeof</code>の引数に型名のみを受け入れるように修正</li>
+<li>構造体の不完全型宣言を追加。構造体の実体は定義せずポインタの取得のみが可能な形の宣言</li>
+<ul>
+<li><code>struct T foo;</code>のように、不完全型<code>struct T</code>の変数<code>foo</code>を宣言し、その後ろで構造体の実体を<code>struct T {int x;};</code>のように定義できる</li>
+<li><code>typedef struct T T;</code>のように構造体を宣言し、後ろで<code>struct T { int x; };</code>のように実体を定義しておくようなやり方もできる（ mmcc のヘッダファイル参照）</li>
+</ul>
+<li>ファイルスコープ関数を追加。<code>static</code>修飾子が付与された関数はファイルスコープの関数としてコードを生成する</li>
+<li><code>extern</code>を追加</li>
+<ul>
+<li>これまでのコミットメッセージが、宣言と定義をちゃんと意識していないものになっていることに気付いたので、改めてここでまとめておく</li>
+<li>宣言は名前が宣言されるだけで、メモリ領域は割り当てられない</li>
+<li>定義は名前が宣言され、メモリ領域が割り当てられる</li>
+</ul>
+<li>トップレベルに型名だけの宣言文を書けるようにした</li>
+<ul>
+<li><code>typedef struct { char a; int b; } Ty1;</code>がトップレベルに書ける</li>
+</ul>
+</ul>
+<h2>Cooking</h2>
+<h3>豚バラ丼</h3>
+<p>写真無しだが思ったより美味しくてかつ簡単だったのでメモ</p>
+<ul>
+<li>玉ねぎを薄切りにして色が透き通るまで炒め、その後豚バラ薄切りを投入して色が変わるまで炒める</li>
+<li>醤油大さじ3、酒と味醂大さじ1、砂糖大さじ1、おろししょうがとおろしにんにく適量を混ぜてフライパンに入れて、汁けがなくなるまで炒める</li>
+<li>温泉卵を丼の真ん中に落としておしまい</li>
+<ul>
+<li>水1リットルを沸騰させて火を切り、水200ccいれたあとに冷蔵庫から出してすぐの卵を入れて13分待つ</li>
+<li>ボウルに卵だけ取り出し、3分待つ</li>
+<li>冷水で冷やす</li>
+</ul>
+</ul>
+<h3>餃子</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ということでつくった。白菜から水が出てジューシー感が凄い。 <a href="https://t.co/svkjbJgc3q">pic.twitter.com/svkjbJgc3q</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1281911711251853313?ref_src=twsrc%5Etfw">July 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>うまかったが、レシピ通りに作ったら90個くらい餃子ができた。あと、チューブでない生姜とにんにくを使用しているので香りが凄く、美味しいが食べたあとに口臭が気になるので、翌日に予定がないのを確認してから作るべし。</p>
+<h3>鶏肉のカッチャトーラ風</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">鶏としめじのカッチャトーラ風 <a href="https://t.co/vI45iVkU1I">pic.twitter.com/vI45iVkU1I</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1281598318313762816?ref_src=twsrc%5Etfw">July 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>またオリーブとバジル忘れた。</p>
+<h3>豆腐ハンバーグ</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">豆腐ハンバーグ。焼き時間が分からなくて結構焦がしてしまったが、見た目ほど気にならずむしろちょうどよい香ばしさだった。 <a href="https://t.co/vq3jicDkR6">pic.twitter.com/vq3jicDkR6</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1281237133756256258?ref_src=twsrc%5Etfw">July 9, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>豆腐ハンバーグは意外と難しいことを知った。味付けと豆腐の割合が肝。</p>
+<ul>
+<li>豚ひき肉100gに対して豆腐150g(半パック)がベスト</li>
+<li>豆腐は時間があれば網の上において水抜きし、ない場合はキッチンペーパーに包んでレンジでチンして水を抜く</li>
+<li>玉ねぎのみじん切りは生でタネに混ぜて良い</li>
+</ul>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>

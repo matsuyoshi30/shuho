@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>07-13</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 29 - 2020</h1>
+        
+        <p>The weekly report from 07-13 to 07-19</p>
+        
+      </header>
+      <h2>Projects</h2>
+<h3>mmcc</h3>
+<ul>
+<li><code>enum</code>の最後が<code>,</code>で終わっている状態を許容するように修正</li>
+<li>自作コンパイラ自身をコンパイルして足りない機能を追加するという進め方にした</li>
+<ul>
+<li><code>size_t</code>型がまだ（プリプロセッサがまだ）なので<code>int</code>へ</li>
+<li>コンパイルできるものから一つずつすすめるため、移動できる関数を移動</li>
+<li>まずは<code>main.c</code>から。フランケンビルド（個々のファイルで別の方法でビルドするやり方）のスクリプトを追加。<a href="https://github.com/matsuyoshi30/mmcc/commit/b097070caf55cd5f8e5569a7e806eef4a27f5c46">コミット</a></li>
+</ul>
+<li>トップレベルに関数の<em>宣言</em>を書いたときのパーズが正しくなかったので修正。<a href="https://github.com/matsuyoshi30/mmcc/commit/ca2550d2756f7f9a419c7b3ce9ed7a2267f49085">コミット</a></li>
+<li><code>codegen.c</code>をコンパイルしてみたらセグフォ。デバッグ情報をアセンブリに出力していないので、まずは機能追加よりもそこからやったほうがよいか検討中。</li>
+</ul>
+<h2>Cooking</h2>
+<h3>ボンゴレ・ビアンコ</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ボンゴレ・ビアンコ。にんにくの香りや唐辛子の辛味、塩加減、アサリの味など全体的に良く出来た。次はもう少し大きいアサリでやりたいな <a href="https://t.co/lVLmaFQrJb">pic.twitter.com/lVLmaFQrJb</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1284727061706240000?ref_src=twsrc%5Etfw">July 19, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>前回はあまり良いアサリではなく、砂抜き、汐抜きがうまくできていなかったようで、正直微妙だったのでリベンジ。今回は砂抜きに一晩かけてしっかり砂を抜き、汐抜きも調理一時間前に完了させて完璧な状態でつくった。ツイートの通り全体的にうまくできたと思う。次はより大きいアサリか、もしくは他の貝を追加して作ってみるのも面白そう。</p>
+<ul>
+<li>アサリ1パックを砂抜き(3%の塩水)、塩抜きして準備</li>
+<li>にんにく1かけ、唐辛子2本、オリーブオイル40cc、白ワイン60cc</li>
+<li>茹で汁(塩分濃度1%)をおたま一杯分</li>
+<ul>
+<li>少なかったかも。麺の茹で時間を短くして、茹で汁をより多く加えてフライパンの中でもっと煮ても美味しいと思う</li>
+</ul>
+</ul>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>

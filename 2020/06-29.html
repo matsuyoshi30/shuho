@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>06-29</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 27 - 2020</h1>
+        
+        <p>The weekly report from 06-29 to 07-05</p>
+        
+      </header>
+      <h2>Projects</h2>
+<h3>mmcc</h3>
+<ul>
+<li><code>break</code>, <code>continue</code>を追加。コード生成前までの変更点は構文解析時にそれぞれのノードを追加するくらい。</li>
+<ul>
+<li><code>break</code>は<code>break</code>用のシーケンス番号を保持するグローバル変数を定義して、for-loop や while の最後のラベルと番号を合わせるようにする。<code>break</code>のノードは単に番号にジャンプする命令になる。</li>
+<li><code>continue</code>も同じようなグローバル変数を定義して、ループの先頭にジャンプする命令の前に<code>continue</code>用のラベルを追加して、<code>continue</code>のノードはそこにジャンプする命令になる。</li>
+</ul>
+<li><code>goto</code>とラベルを追加。それぞれ goto 先へのジャンプ命令、ラベルの追加だけ。</li>
+<li><code>switch-case</code>を追加。C の<code>switch</code>は<code>if-else</code>というよりは<code>goto</code>のかたまりみたいなもので、<code>break</code>がなければ次のケースラベルの処理に移る。構文解析のときは<code>switch</code>用のノードを準備しておき、その中で書かれているケースはノードに新しく追加したポインタ変数に連結させる形で追加していく。コード生成では連結させたポインタ変数について先にラベルにジャンプする命令を生成し、その後各文に対するコードを生成する。<code>case</code>文に対応するノードはラベルとその後の文についてコード生成する。</li>
+<li>キャストを追加。キャスト後の型に読み替えるだけだが、コード生成では符号拡張する命令になる。<a href="https://www.sigbus.info/compilerbook#%E3%82%B9%E3%83%86%E3%83%83%E3%83%9724-%E6%96%87%E5%AD%97%E5%9E%8B%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B">ここのコラム</a>参考。</li>
+<li>キャストの追加に伴い<code>short</code>と<code>long</code>を追加。</li>
+</ul>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>
