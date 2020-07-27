@@ -9,11 +9,10 @@
   </head>
   <body>
     <article class="markdown-body">
-      <h1>{{ .Name }}</h1>
-      <p>{{ .Description }}</p>
-      <a href="https://github.com/matsuyoshi30/til/actions?query=workflow%3A%22GitHub+Pages%22">
-        <img src="https://github.com/matsuyoshi30/til/workflows/GitHub%20Pages/badge.svg" />
-      </a>
+      <header>
+        <h1>{{ .Name }}</h1>
+        <p>{{ .Description }}</p>
+      </header>
       {{ range $i, $p := .Posts }}
       {{ if or ( eq $i 0 ) ( $p.IsLastWeek ) }}<h2>{{ $p.PostYear }}</h2>{{ end }}
       <ul>

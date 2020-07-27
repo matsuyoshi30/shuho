@@ -13,10 +13,12 @@
   <body>
     <article class="markdown-body">
       <p><a href="..">Back</a></p>
-      <h1>Week {{ .WeekNum }} - {{ .PostYear }}</h1>
-      {{ if ne .FromDate "" }}
-        The weekly report from {{ .FromDate }} to {{ .ToDate }}
-      {{ end }}
+      <header>
+        <h1>Week {{ .WeekNum }} - {{ .PostYear }}</h1>
+        {{ if ne .FromDate "" }}
+        <p>The weekly report from {{ .FromDate }} to {{ .ToDate }}</p>
+        {{ end }}
+      </header>
       {{ .Body }}
       <div class="footer" style="text-align:center; padding-top:30px;">
         <p class="links">

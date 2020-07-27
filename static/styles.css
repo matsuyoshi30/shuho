@@ -5,6 +5,9 @@
   margin: auto;
   padding: 45px;
 }
+header {
+  text-align: center;
+}
 li {
   margin-top: 0.5em;
 }
