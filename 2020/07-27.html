@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>07-27</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 31 - 2020</h1>
+        
+        <p>The weekly report from 07-27 to 08-02</p>
+        
+      </header>
+      <h2>Projects</h2>
+<h3>mmcc</h3>
+<ul>
+<li>コメントや BNF を修正</li>
+<li>ローカル変数の初期化子、指示付き初期化子を追加</li>
+<ul>
+<li>ローカル変数の初期化式はサポート済みだったが、全て宣言をパーズする関数内で処理しておりなかなかカオス化していた</li>
+<li>規約の initializer の部分を読みながらちまちまノートに書いて実装内容を検討していたが、二重配列の初期化式が少しめんどくさそう。指示付き初期化子をどういったデータ構造で表すかがぱっと出てこなかったので、試しに rui さんのリファレンス実装見たら、「これが正解か…」」となってしまった</li>
+<li>ので、リファレンス実装を参考にしながら実装</li>
+</ul>
+</ul>
+<h3>harbor</h3>
+<p>自作の Hugo テーマ</p>
+<ul>
+<li>デモの検索機能が壊れているという issue が登録されていたのを対応した</li>
+<ul>
+<li>公式が用意しているデモ内容ではなく、自分でカスタムした内容をデモに適用したい場合は、テーマのリポジトリに exampleSite というディレクトリを用意し、テーマが登録されている公式のリポジトリに、テーマサイトのビルドスクリプトの whitelist に自分のテーマを入れてもらう必要がある</li>
+<li>最初は exampleSite 内の config.toml 内容が問題かと思ったが、上記の内容を認識していなかった</li>
+<li>whitelist に入れてもらっても、デモの検索ページが無い。 examlpleSite 内のコンテンツ内容を修正したところ、ローカルでの確認で検索ページが表示されたので、コンテンツ内容が問題だったっぽい。公式のビルドスクリプトを読んだがよくわからず、行きあたりばったりの対応になってしまった</li>
+<li>=> シェルスクリプトの勉強が必要</li>
+</ul>
+</ul>
+<h2>Cooking</h2>
+<h3>カルボナーラ</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">カルボナーラ。パルミジャーノの量がいまいち分からず多分少なめ。ベーコンの焼きが足りなかったのが反省ポイント。もっとカリカリにしないとだめ <a href="https://t.co/kw54kUfA8p">pic.twitter.com/kw54kUfA8p</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1289438664326488070?ref_src=twsrc%5Etfw">August 1, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>パルミジャーノは体感少なめだったが、それが逆に好みの味になった（そういうの多い）。ベーコンはカリカリにしないとダメ、というかカリカリにしたほうがより美味しくなるはず。あとベーコンではなくパンチェッタを使ったほうがより本格的になるので、パンチェッタを調達すべし。</p>
+<ul>
+<li>パスタ 200g</li>
+<li>卵黄 2つ</li>
+<li>生クリーム 80cc</li>
+<li>ベーコン 好みの量</li>
+<li>胡椒 たっぷり</li>
+<li>パルミジャーノ たっぷり</li>
+<ul>
+<li>好みの量を覚えるために次からは記録しておく</li>
+</ul>
+</ul>
+<h2>Life</h2>
+<h3>MacBook Pro</h3>
+<p>バッテリーが膨らんで液晶画面が閉じなくなってしまっていたのを修理に出した。バッテリーの膨張に気がついたのはだいぶ前だったのだが、作業に支障を来すレベルではないし、 Apple Silicon 搭載のモデルが出るからそれまでまとうかなと思っていた。が、最近 PSP のバッテリー膨張騒ぎがあり、よく考えたらそのまま使い続けるの危ないじゃんと気付いたので、銀座の Apple ストアへ。一階部分しか知らなかったが三階に映画館みたいな施設があり、そこで Genius Bar の順番を待った。軽く中身を検査してもらってバッテリー以外に問題がないことを確認し、規約を読んでサインして支払いを済ませて完了。2015 Early モデルなのだが、このモデルの修理には少し時間がかかるが良いかと言われ、二週間くらいかかるのかなと身構えてどれくらいか聞いてみたら長くて3日とのこと。全然問題ないです。</p>
+<p>モデル的にバッテリーとキーボード部分が一体になっており、バッテリー交換に伴いキーボード部分も新しくなるとのこと。こちらとしてはまだ使う気なので新しく分にはどうぞよろしくおねがいしますという感じでお話しした。</p>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>
