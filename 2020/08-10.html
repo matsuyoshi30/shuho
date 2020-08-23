@@ -22,13 +22,13 @@
       <h2>Projects</h2>
 <h3>mmcc</h3>
 <ul>
-<li>ローカル変数の文字列の初期化式を追加<a href="https://github.com/matsuyoshi30/mmcc/commit/171ece90b228206aebb1da5380e01397bfcc8296">commit</a></li>
+<li>ローカル変数の文字列の初期化式を追加 <a href="https://github.com/matsuyoshi30/mmcc/commit/171ece90b228206aebb1da5380e01397bfcc8296">commit</a></li>
 <ul>
 <li><code>char x[4] = "abc"</code>のように char の配列型変数に対して文字列を与える初期化式をサポート</li>
 <li>初期化式で、配列の要素数に対して少ない個数のデータを与えられたとき、余っている部分は0で埋められる。例えば、<code>char x[4] = "ab"</code>は<code>char x[4] = {'a', 'b', 0, '\0'}</code>となるので、それを実現する関数を追加</li>
 <li>上記の通り、文字列の初期化式<code>char x[4] = "abc"</code>は<code>char x[4] = {'a', 'b', 'c', '\0'}</code>を意味する。変数が配列型かつ配列の要素は CHAR 型かつ今読んでいるトークンが文字列トークンの場合は、初期化式で指定している配列の要素数と文字列トークンの長さを確認し、確認後の長さ分だけループを回して<code>char x[0] = 'a'; char x[1] = 'b';</code>のように一つずつ初期化式の AST を構築していく。その後、用意した配列に余りがあればその分だけ0で埋める</li>
 </ul>
-<li>グローバル変数の初期化式（数値）<a href="https://github.com/matsuyoshi30/mmcc/commit/7b85909d57d36699f1265c7485fe12e05764a5d3">commit</a></li>
+<li>グローバル変数の初期化式（数値） <a href="https://github.com/matsuyoshi30/mmcc/commit/7b85909d57d36699f1265c7485fe12e05764a5d3">commit</a></li>
 </ul>
 <h2>Cooking</h2>
 <h3>鶏と野菜の黒酢あん定食</h3>
