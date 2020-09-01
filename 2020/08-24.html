@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>08-24</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 35 - 2020</h1>
+        
+        <p>The weekly report from 08-24 to 08-30</p>
+        
+      </header>
+      <h2>Projects</h2>
+<h3>mmcc</h3>
+<ul>
+<li>グローバル変数の初期化式で、他の変数のアドレスを右辺に持つ式のサポートを追加</li>
+<ul>
+<li>他の変数名を参照し、コード生成時に<code>.quad <label></code>で飛ばす</li>
+</ul>
+</ul>
+<h3>harbor</h3>
+<ul>
+<li>検索機能が使えない問題が発生</li>
+<ul>
+<li>投稿一覧を json として出力してそれに対して検索をかけているのだが、その際対象の json に<code>../post/index.json</code>という形でアクセスしている</li>
+<li>検索ページの URL の最後に / がついていない場合、上記のアクセスでは json を取得できないので検索ボックスに入れても何も怒らなかった</li>
+<li>trailing slash というらしい。 config.toml で検索ページの URL を<code>/search/</code>として解決</li>
+</ul>
+</ul>
+<h2>Cooking</h2>
+<h3>カレー</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">カレー。2時間くらい煮込んだら鶏もも肉粉々になった。 <a href="https://t.co/19oYBxpKHE">pic.twitter.com/19oYBxpKHE</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1298281456423170049?ref_src=twsrc%5Etfw">August 25, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<h2>Life</h2>
+<h3>北海道へ行った</h3>
+<p>3泊4日で札幌へ。食べたいものと宿泊施設だけ決めた。レンタカーを借りて移動したり social distancing を心がけて過ごした。意外にもすすきのあたりはマスクをしていない人もそこそこいた。</p>
+<p>行ったところと写真は swarm に。</p>
+<ul>
+<li>初日</li>
+<ul>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f45f8884de55427b353fc87?s=1NMHLzorLYthgOd1AXcqKxF4uHU">スープカリー イエロー</a></li>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f460984181b28631a84e6c2?s=AZJeMkhkRsR9yayGvaGLTFl8_2A">CAFE NOYMOND</a></li>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f4662567d520c7c379c1437?s=Y-So<em>y-NA4</em>WRemhxf3wUEAVKYs">鮨処 有馬</a></li>
+</ul>
+<li>二日目</li>
+<ul>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f4740ed58a30000dbeb6cc3?s=9cu8IDMZXk8GqEosIdywPOWgUII">元祖豚丼のぱんちょう</a></li>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f4860a77cf6d12eb5c58378?s=f3I2SDIApdRTWHfwsWeCM5J0uyk">麺屋 雪風</a></li>
+</ul>
+<li>三日目</li>
+<ul>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f48744576e02e12c5eae22e?s=HhgBZOniAqw1zL1FZq2p3yL1dtY">函館うに むらかみ</a></li>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f48ebddf1ab5363a6110a68?s=FlJqcUlpbNz42Ng2zXx-B-70RRQ">トラットリア・ピッツェリア テルツィーナ</a></li>
+</ul>
+<li>四日目</li>
+<ul>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f49d48a9fd23455b167baad?s=TwoqdDu2TbGtb9c7gBDAD4ADcl8">魚屋の台所</a></li>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f49e06a54659d64ddbc75dc?s=_1KTOzlHreUXHmHngWmkH<em>K7K</em>0">麺屋 彩未</a></li>
+<li><a href="https://foursquare.com/matsuyoshi30/checkin/5f49fe4acd71c86ca188323f?s=XtwChFVld9EnLndJjfi9yfdi-eE">ピカンティ</a></li>
+</ul>
+</ul>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>
