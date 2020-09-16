@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>09-07</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 37 - 2020</h1>
+        
+        <p>The weekly report from 09-07 to 09-13</p>
+        
+      </header>
+      <h2>Projects</h2>
+<h3>mmcc</h3>
+<ul>
+<li>関数呼び出し時のスタックフレームが16の倍数に整理されるように修正 <a href="https://github.com/matsuyoshi30/mmcc/commit/ec10398144b0aed8507cc01fea5031013caba829">commit</a></li>
+<ul>
+<li>x86_64 では、関数呼び出し時に rsp が16の倍数になっていなければならない <a href="https://uchan.hateblo.jp/entry/2018/02/16/232029">参考</a></li>
+<li>rsp と15(0b1111)で AND をとり、その結果が0かどうかを確認する</li>
+<li>0の場合は rsp が16の倍数なので、何もせず普通に関数を呼び出す</li>
+<li>0でない場合は rsp は16の倍数ではないので、 rsp を16の倍数に調整する部分にジャンプ。 rsp は8の倍数になっているので、もう8伸ばしてから関数を呼び出す</li>
+<li>関数から戻ってきたら rsp をもとに戻す必要があるので、さっき伸ばした8を戻す</li>
+</ul>
+<li>static なローカル変数をサポート <a href="https://github.com/matsuyoshi30/mmcc/commit/fd59c0bcffec2de435ae5ed8841cc0112311d004">commit</a></li>
+<ul>
+<li>static なグローバル変数としてパーズ</li>
+</ul>
+<li>文字列のパーズとコード生成について改善 <a href="https://github.com/matsuyoshi30/mmcc/commit/8a182be39e5fb74660607d90b3979a9582709c06">commit</a></li>
+<li>構造体のメンバーについてアラインメント <a href="https://github.com/matsuyoshi30/mmcc/commit/962750f3ee2ec6451ae15da254b9880b1822adea">commit</a></li>
+<ul>
+<li>構造体のアラインメントは、メンバーの中で最大のアラインメントになる</li>
+<li>例えば<code>struct { char a; int b; }</code>は、アラインメントを考慮しない場合場合、<code>char</code>の1バイトと<code>int</code>の4バイトで合計5バイトの構造体になるが、アラインメントを考慮する場合、 a の直後から b の領域となるのではなく、 a が4バイト境界にアラインメントされて（後ろの3バイトをあけて）から b の領域となり、構造体は合計8バイトとなる</li>
+</ul>
+<li>フランケンビルドの対象に codegen.c を追加</li>
+<li>複合リテラルを追加 <a href="https://github.com/matsuyoshi30/mmcc/commit/d65da555379dc3483425d630ad75d184344d9cd3">commit</a></li>
+<ul>
+<li><code>(int){1}</code>とか<code>(int[]){0,1,2}</code>とか</li>
+<li>任意の構造体の値をソースコードに直接書くことができる機能で、自作コンパイラでは Type 構造体について int や long を定数的に定義する箇所でこの機能を利用している</li>
+<li>ローカル変数時に SEGV してることを、これを書いているときに気づいた</li>
+</ul>
+<li>ローカル変数の初期化子に構造体を追加 <a href="https://github.com/matsuyoshi30/mmcc/commit/25229ae6421e2a9ebe21b06e1de112c604370996">commit</a></li>
+<li>グローバル変数の初期化子に構造体を追加 <a href="https://github.com/matsuyoshi30/mmcc/commit/e1e087f1e4a460d0875629dbaa03ce8b188de7e8">commit</a></li>
+</ul>
+<h2>Cooking</h2>
+<h3>ヴィシソワーズ</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">BONIQ でヴィシソワーズ作った <a href="https://t.co/NVEcPUS3PH">pic.twitter.com/NVEcPUS3PH</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1304020812588920833?ref_src=twsrc%5Etfw">September 10, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>BONIQ という低音調理器具を購入した。この他にも蒸し鶏や温泉卵、とうもろこしなどを調理してみたが、基本的に放っておくだけでクオリティの高い料理が準備できるので非常に便利。鶏の胸肉やササミはもはやこれで調理したものでないと食べられないくらい美味しかった。</p>
+<h2>Life</h2>
+<h3>BONIQ を買った</h3>
+<p>最近良く見ている YouTube のチャンネルで使用されており、ダイエット中の食生活をサポートしてくれそうな商品だったので購入した。最初は池袋のビックカメラで買おうと思ったのだが、在庫がなく入荷が10月下旬になるとのことだったので、直販サイトで購入した。翌日には宅配された。</p>
+<p>基本的に温度と時間を設定して放置しておくだけで、素人が普通に調理しても出せない質感に仕上がるので非常に良い買い物だった。今後も様々なレシピに挑戦していく。</p>
+<h3>ボンディに行った</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">I&#39;m at Bondy in 千代田区, 東京都 <a href="https://t.co/HBFolDwUIe">https://t.co/HBFolDwUIe</a> <a href="https://t.co/1DjBg39aNV">pic.twitter.com/1DjBg39aNV</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1304969146350870528?ref_src=twsrc%5Etfw">September 13, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>カレーの激戦区、神保町にある欧風カレーの有名店へ、二年ぶりに行った。</p>
+<p>前回は夕方くらいに行ってそれなりに並んだ記憶があるので、開店時刻の11時より少し前に到着するよう家を出たら、前に一人しか並んでいなかった。少し早く来てしまったかなと思ったが、開店が近づくに連れ続々と人が並び始めり、退店するときは結構な長さになっていた。</p>
+<p>前回は店のオススメであるビーフカレーを食べたので、今回はチキンカレーを食べた。じゃがバター、チーズが乗ったライス、味に深みのあるルー、さっぱりするキューちゃん、全て美味かった。次も開店前に来て並ばずに食べよう。カレーの種類は色々ある。次はほたてカレーを頼もうと思う。</p>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>
