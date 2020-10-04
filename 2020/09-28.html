@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>09-28</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 40 - 2020</h1>
+        
+        <p>The weekly report from 09-28 to 10-04</p>
+        
+      </header>
+      <h2>Projects</h2>
+<h3>mmcc</h3>
+<ul>
+<li>第2世代ビルドスクリプトに parse.c を追加 <a href="https://github.com/matsuyoshi30/mmcc/commit/5862bb6ca2f4a44424ec781770828f14565a2e1c">commit</a></li>
+<li>可変長引数をもつ関数の宣言をパースできるよう追加 <a href="https://github.com/matsuyoshi30/mmcc/commit/119da789904098ac049d1428a82c1c4ca73ff642">commit</a></li>
+<ul>
+<li><code>...</code>をみて可変長引数を持つか否かをフラグとしてセットするだけ</li>
+</ul>
+<li>ポインタ同士の減算について修正 <a href="https://github.com/matsuyoshi30/mmcc/commit/5031958f1ee21beb90ef97670908a8fa95427da1">commit</a></li>
+<ul>
+<li>tokenize.c で定義しているエラー出力関連の関数で、エラーが発生した行番号を出すのに<code>char *</code>同士の減算をしている</li>
+<li>要素2つがどれだけ離れているかを計算すればよい</li>
+</ul>
+<li>ローカル変数の初期化式について、要素数不明の配列は要素数を確定してから余白を埋めるように修正 <a href="https://github.com/matsuyoshi30/mmcc/commit/1eb65094714e7d8a7b95595d1e54674c3de5a310">commit</a></li>
+</ul>
+<h2>Life</h2>
+<h3>転職した</h3>
+<p>新卒から4年半勤めたところを9月で退職し、10月から新しいところで働いている。退職ブログとか転職ブログとか書こうかと思ったけど、今のところになれてきたらにしようかと考えている。</p>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>
