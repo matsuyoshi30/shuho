@@ -24,9 +24,9 @@
 <ul>
 <li>グローバル変数の初期化式（数値）について、初期値の保持の仕方を修正 <a href="https://github.com/matsuyoshi30/mmcc/commit/0307cd20e5edc14f52fcd4c1daa7d07db9387290">commit</a></li>
 <ul>
-<li>もともとは<code>long</code>で数値を保持していたものを<code>char <em></code>に変更し、パーズするときに用意した<code>char </em></code>のバッファを適宜キャストして数値を書き込む</li>
+<li>もともとは<code>long</code>で数値を保持していたものを<code>char *</code>に変更し、パーズするときに用意した<code>char *</code>のバッファを適宜キャストして数値を書き込む</li>
 </ul>
-<li>文字列の初期化式で、<code>char</code>の配列型かつ要素数が省略された変数のサポートを追加 <a href="https://github.com/matsuyoshi30/mmcc/commit/cea625adb821c5c6cc1b3fc1285e3160ac227cda">commit</a></li>
+<li>文字列の初期化式で、<code>char</code>の配列型かつ要素数が省略された変数のサポートを追加 [commit](https://github.com/matsuyoshi30/mmcc/commit/cea625adb821c5c6cc1b3fc1285e3160ac227cda)</li>
 <ul>
 <li>もともと要素数が省略された初期化式はサポートしていたが、配列のサイズがゼロとしてパーズするのみで、数値の配列のみ対応できていた</li>
 <li><code>char x[] = "foo"</code>をパーズする際、文字列の長さと配列のサイズを比較して、配列のサイズまで一文字ずつ配列に格納していくというやり方だが、上のやり方では比較時に配列のサイズをゼロと判断してしまい、うまくパーズできない</li>

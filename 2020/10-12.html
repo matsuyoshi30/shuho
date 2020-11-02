@@ -24,8 +24,8 @@
 <ul>
 <li>可変長引数を用いた関数の定義をサポート <a href="https://github.com/matsuyoshi30/mmcc/commit/a987a7664308a2f7e36da57ec174a08f183066ad">commit</a></li>
 <ul>
-<li><code>_<em>builtin</em>va<em>start()</code>に対して生成されるアセンブリについては System V の ABI 参照 <a href="https://uclibc.org/docs/psABI-x86</em>64.pdf">ここの53p</a></li>
-<li>第一引数には<code>va<em>list</code>構造体へのポインタが入っているから、引数のバイト数が<code>gp</em>offset</code>、引数領域の終わりが<code>reg<em>save</em>area</code>に入る</li>
+<li><code>__builtin_va_start()</code>に対して生成されるアセンブリについては System V の ABI 参照 [ここの53p](https://uclibc.org/docs/psABI-x86_64.pdf)</li>
+<li>第一引数には<code>va_list</code>構造体へのポインタが入っているから、引数のバイト数が<code>gp_offset</code>、引数領域の終わりが<code>reg_save_area</code>に入る</li>
 </ul>
 </ul>
 <h2>Cooking</h2>

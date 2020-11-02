@@ -27,7 +27,7 @@
 <ul>
 <li><code>size_t</code>型がまだ（プリプロセッサがまだ）なので<code>int</code>へ</li>
 <li>コンパイルできるものから一つずつすすめるため、移動できる関数を移動</li>
-<li>まずは<code>main.c</code>から。フランケンビルド（個々のファイルで別の方法でビルドするやり方）のスクリプトを追加。<a href="https://github.com/matsuyoshi30/mmcc/commit/b097070caf55cd5f8e5569a7e806eef4a27f5c46">コミット</a></li>
+<li>まずは<code>main.c</code>から。フランケンビルド（個々のファイルで別の方法でビルドするやり方）のスクリプトを追加。[コミット](https://github.com/matsuyoshi30/mmcc/commit/b097070caf55cd5f8e5569a7e806eef4a27f5c46)</li>
 </ul>
 <li>トップレベルに関数の<em>宣言</em>を書いたときのパーズが正しくなかったので修正。<a href="https://github.com/matsuyoshi30/mmcc/commit/ca2550d2756f7f9a419c7b3ce9ed7a2267f49085">コミット</a></li>
 <li><code>codegen.c</code>をコンパイルしてみたらセグフォ。デバッグ情報をアセンブリに出力していないので、まずは機能追加よりもそこからやったほうがよいか検討中。</li>
