@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>11-16</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 47 - 2020</h1>
+        
+        <p>The weekly report from 11-16 to 11-22</p>
+        
+      </header>
+      <h2>Projects</h2>
+<h3>harbor</h3>
+<ul>
+<li>header の CSS がおかしくなったので見てくれという連絡が Twitter 経由から来ていたので調査</li>
+<ul>
+<li>CSS のセレクタが -heading という postfix がついているもののすべてではなく、.page- や .post- など決まった文字列のみサポートだったので、 postfix だけにして修正 <a href="https://github.com/matsuyoshi30/harbor/commit/35971e2a0e44b654e16049dc4d853ccfdb84c041">commit</a></li>
+</ul>
+<li>来ていた PR を確認してマージ</li>
+<ul>
+<li>goatcounter というアナリティクスツールのサポート追加 <a href="https://github.com/matsuyoshi30/harbor/commit/7fe2f636dbb36d24b5a5bacd7c69dceb7dce02d7">commit</a></li>
+<li>ダークテーマのロードが遅く、白表示→黒表示までタイムラグがある問題を修正 <a href="https://github.com/matsuyoshi30/harbor/commit/6d506997f7594c09f3051537dda119a2ecfe223f">commit</a></li>
+<li>fossa というライセンススキャンサービスを CI に追加 <a href="https://github.com/matsuyoshi30/harbor/commit/59b96b62870a5d99ca2fb81a1b6e94f5b6046a48">commit</a></li>
+</ul>
+<li>ESLint と prettier を追加（<a href="https://blog.matsuyoshi30.net/2020/11/22/add-eslint-and-prettier-to-my-theme/">ブログ</a>も書いた） <a href="https://github.com/matsuyoshi30/harbor/commit/7150e7fbade1f3134a67825c716ab52c1dc80d98">commit</a></li>
+</ul>
+<h2>Life</h2>
+<h3>Nature Bath という勉強会に参加した</h3>
+<p>勉強会の詳細は<a href="https://nature.connpass.com/event/194611/">こっち</a>。</p>
+<p>「みんなの Go 言語」という本の著者三名が、実際の業務においてどのように Go での開発や運用を進めているかをお話しいただき、あとは参加者が事前に提出した質問に対して時間の限り答えるという形式だった。</p>
+<p>トークと質問含め一時間だったのだが、終盤は時間がおしてる感じもあり、もっと長く聞きたいと思った。「みんなの Go 言語」は少し前に第2版が出たのだが、 Go 自体の進化のスピードが早く、もう第3版出したいよねというお話もしていた。第3版でたら買うので早く出してほしい。</p>
+<p>個人的ハイライトは内閣府が公開している日本の祝日一覧の話。 csv 形式でファイル名は syukujitsu なのに URL に shukujitsu が入ってるという謎。紹介されていた、これを使用した<a href="https://github.com/soh335/shukujitsu">ライブラリ</a>は普通に便利そうだし、週イチでこの csv を読んで、更新されていたらライブラリのデータ部分も更新するという作りがすごく参考になった。</p>
+<p>https://www8.cao.go.jp/chosei/shukujitsu/syukujitsu.csv</p>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>
