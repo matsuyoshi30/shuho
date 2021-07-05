@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>03-22</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+  <body>
+    <article class="markdown-body">
+      <p><a href="..">Back</a></p>
+      <header>
+        <h1>Week 12 - 2021</h1>
+        
+        <p>The weekly report from 03-22 to 03-28</p>
+        
+      </header>
+      <h2>Projects</h2>
+<h3>harbor</h3>
+<ul>
+<li>個別の記事など特定のページで fonts don't download 404 のエラーが出る問題に対応 <a href="https://github.com/matsuyoshi30/harbor/pull/97">PR</a></li>
+<ul>
+<li>bundle してる CSS でフォントデータの URL を相対パスで指定していた</li>
+<li>どのページでも同じ JS ファイルを読み込んでるので、ページによってはフォントデータの URL が解決できなくてエラー担っていた</li>
+<li>webpack v5 から導入された Assets Management 機能を使うことで対応</li>
+</ul>
+<li>index.json Not Found 404 のエラーが出る問題に対応 <a href="https://github.com/matsuyoshi30/harbor/pull/98">PR</a></li>
+<ul>
+<li>検索機能でしか用いない JSON ファイルなのに、これも上の問題と同じ用に相対パスで JSON ファイルを指定していて、同じ JS ファイルをどのページでも読み込んでいた</li>
+<li>JS ファイルを検索とそれ以外（CSS バンドル）に分けて、検索用の JS は検索ページでのみ読み込むようにした</li>
+</ul>
+</ul>
+<h2>Life</h2>
+<h3>HHKB Professional Hybrid Type-S を買った</h3>
+<p><blockquote class="twitter-tweet"><p lang="ja" dir="ltr">かった <a href="https://t.co/hsttAsnI6t">pic.twitter.com/hsttAsnI6t</a></p>&mdash; matsuyoshi (@matsuyoshi30) <a href="https://twitter.com/matsuyoshi30/status/1376024546835226626?ref_src=twsrc%5Etfw">March 28, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>会社の在宅備品補助手当、年度内に使っておかないと新年度になって制度が変わるかもしれないというのを雑談していて、使おうと思って使っていなかったことに気づいたので急いで買った。</p>
+<p>税抜35000円。今までラップトップのキーボードとかデスクトップでもやっすい備え付けのキーボードしか使ったことなかったが、あまりの打鍵感の良さに感動している。</p>
+<p>手首の角度がつらそうなのでパームレスト買いたいが、パームレストを置くのに余裕のあるデスクがほしいし、さらにモニターもほしいし、マウスもほしいし、なんかもういろいろほしくなってきた。</p>
+      <div class="footer" style="text-align:center; padding-top:30px;">
+        <p class="links">
+          <a href="https://github.com/matsuyoshi30/til/tree/master/shuho">Source</a>
+        </p>
+      </div>
+    </article>
+  </body>
+</html>
