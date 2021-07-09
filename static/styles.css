@@ -5,17 +5,61 @@
   margin: auto;
   padding: 45px;
 }
+
 header {
   text-align: center;
 }
+
 li {
   margin-top: 0.5em;
 }
+
+.pager {
+  list-style: none;
+  text-align: center;
+  margin: 20px 0 0;
+  padding-left: 0 !important; /* override github-markdown.css */
+}
+
+.pager ul {
+  display: block;
+}
+
+.pager li {
+  display: inline;
+}
+
+.pager li a {
+  text-align: center;
+  display: inline-block;
+  letter-spacing: 1px;
+  padding: 10px 5px;
+}
+
+.pager .previous > a {
+  float: left;
+  display: block;
+}
+
+.pager .next > a {
+  float: right;
+  display: block;
+}
+
+.footer {
+  padding: 60px 0;
+  text-align: center;
+}
+
 @media (max-width: 767px) {
   .markdown-body {
     padding: 15px;
   }
+  .pager li a {
+    padding: 10px 20px;
+  }
 }
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #1b262c;

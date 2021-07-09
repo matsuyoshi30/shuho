@@ -20,7 +20,21 @@
         {{ end }}
       </header>
       {{ .Body }}
-      <div class="footer" style="text-align:center; padding-top:30px;">
+      <div>
+        <ul class="pager">
+          {{ if .PrevPost }}
+          <li class="previous">
+            <a href="../{{ .PrevPost.PostYear }}/{{ .PrevPost.FromDate }}.html">prev</a>
+          </li>
+          {{ end }}
+          {{ if .NextPost }}
+          <li class="next">
+            <a href="../{{ .NextPost.PostYear }}/{{ .NextPost.FromDate }}.html">next</a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      <div class="footer">
         <p class="links">
           <a href="https://github.com/matsuyoshi30/shuho/blob/master/content/{{ .PostYear }}/{{ .FromDate }}.md">Source</a>
         </p>
