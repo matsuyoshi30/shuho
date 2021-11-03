@@ -1,3 +1,3 @@
-# shuho
+# shuho (Archived)
 
-Inspired by https://shuho.kt3k.org/.
+Inspired by https://shuho.kt3k.org/. 
